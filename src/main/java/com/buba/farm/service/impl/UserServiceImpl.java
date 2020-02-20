@@ -23,9 +23,16 @@ public class UserServiceImpl implements UserService {
     @Override
     /*用户登录*/
     public SecUser login(String tel, String password) {
-
         SecUser user=userMapper.login(tel);
+        if(password.equals(user.getPassword())){
+            return user;
+        }
+        return null;
+    }
 
+    @Override
+    public SecUser login(String tel) {
+        SecUser user=userMapper.login(tel);
         return user;
     }
 }

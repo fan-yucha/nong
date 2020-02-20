@@ -14,4 +14,5 @@ public interface UserService {
 
     /*用户登录*/
     SecUser login(String tel, String password);
+    SecUser login(String tel);
 }
